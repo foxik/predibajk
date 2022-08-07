@@ -33,7 +33,7 @@ def main(args: argparse.Namespace) -> None:
     with open(os.path.join(args.model, "classes.pickle"), "rb") as classes_file:
         classes = pickle.load(classes_file)
 
-    # Build pipeline for the dev data
+    # Build pipeline for the predicted data
     def load_and_resize(path):
         image = tf.io.read_file(path)
         image = tf.io.decode_image(image, dtype=tf.float32, channels=3, expand_animations=False)
